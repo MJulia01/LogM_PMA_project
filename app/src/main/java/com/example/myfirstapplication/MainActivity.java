@@ -3,7 +3,6 @@ package com.example.myfirstapplication;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,13 +24,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //Button browseButton = (Button) findViewById(R.id.browseButton);
 
-        //browseButton.setOnClickListener(new View.OnClickListener() {
-            //public void onClick(View v) {
-                //Log.d("BUTTONS", "User tapped the Supabutton");
-            //}
-        //});
 
     }
 public void browseN(View view) {
