@@ -8,42 +8,86 @@
     android:background="#FFC993"
     tools:context=".Add_Recipy">
 
+
     <LinearLayout
-        android:layout_width="335dp"
-        android:layout_height="521dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="413dp"
+        android:layout_height="516dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginBottom="69dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="114dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/righteous"
-            android:text="Recipe Name" />
+            android:text=""
+            android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="match_parent"
+            android:layout_width="375dp"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:hint="" />
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:background="@drawable/text_box"
+            android:elevation="10dp"
+            android:hint="Recipe name"
+            android:fontFamily="@font/righteous"
+            android:padding="10dp" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/righteous"
-            android:text="Ingredients" />
+            android:text=""
+            android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="match_parent"
+            android:layout_width="375dp"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:hint="" />
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:background="@drawable/text_box"
+            android:elevation="10dp"
+            android:gravity="left"
+            android:hint="ingredients"
+            android:fontFamily="@font/righteous"
+            android:padding="10dp" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/righteous"
+            android:text=""
+            android:textSize="18dp" />
+
+        <EditText
+            android:layout_width="375dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:background="@drawable/text_box"
+            android:elevation="10dp"
+            android:gravity="left"
+            android:hint="Step-by-step guide"
+            android:fontFamily="@font/righteous"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/righteous"
+            android:text=""
+            android:textSize="18dp" />
+
+</LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
