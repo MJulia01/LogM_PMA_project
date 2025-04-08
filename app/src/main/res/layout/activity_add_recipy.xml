@@ -5,6 +5,45 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFC993"
     tools:context=".Add_Recipy">
 
+    <LinearLayout
+        android:layout_width="335dp"
+        android:layout_height="521dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="114dp">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/righteous"
+            android:text="Recipe Name" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/righteous"
+            android:text="Ingredients" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
