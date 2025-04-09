@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFC993"
+    android:background="@drawable/gradient"
     tools:context=".Add_Recipy">
 
 
@@ -89,5 +89,18 @@
             android:textSize="18dp" />
 
 </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/righteous"
+        android:textSize="35dp"
+        android:textColor="#5B221F"
+        android:gravity="center"
+        android:text="Add Recipe!"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="102dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
