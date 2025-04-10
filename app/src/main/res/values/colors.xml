@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="mainMenu">#FFF0E8</color>
+    <color name="addRecipeCol">#FFC993</color>
+    <color name="browseCol">#FFA05C</color>
+    <color name="shakeCol">#FF6123</color>
 </resources>

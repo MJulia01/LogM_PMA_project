@@ -5,25 +5,52 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFA05C"
+    android:background="@color/browseCol"
     tools:context=".Browse_Recipes">
 
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="411dp"
-        android:layout_height="226dp"
+        android:layout_width="413dp"
+        android:layout_height="564dp"
         android:layout_marginTop="25dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textHeadlineBrowse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/righteous"
+            android:text="Browse"
+            android:textAlignment="center"
+            android:textColor="#5B221F"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.274" />
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="352dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="25dp"
             android:layout_weight="3"
+            android:background="@drawable/text_box"
+            android:elevation="10dp"
+            android:fontFamily="@font/righteous"
+
             />
 
     </LinearLayout>
@@ -33,29 +60,16 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#FF6123"
-        android:text="back"
+        android:text="@string/backButton"
         app:cornerRadius="12dp"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="23dp" />
-
-    <TextView
-        android:id="@+id/textHeadlineBrowse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_weight="0.5"
-        android:fontFamily="@font/righteous"
-        android:text="Browse"
-        android:textAlignment="center"
-        android:textColor="#5B221F"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.033" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
