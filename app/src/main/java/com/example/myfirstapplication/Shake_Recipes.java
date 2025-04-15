@@ -59,7 +59,7 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
         float y = event.values[1];
         float z = event.values[2];
         float acceleration = (float) Math.sqrt(x * x + y * y + z * z);
-        if (acceleration > 15)
+        if (acceleration > 20)
         {
             Log.d("Shaken", "You shook it!");
         }

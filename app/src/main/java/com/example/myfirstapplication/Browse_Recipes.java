@@ -1,5 +1,7 @@
 package com.example.myfirstapplication;
 
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -9,7 +11,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Browse_Recipes extends AppCompatActivity {
-
+    private SensorManager mSensorManager;
+    private Sensor mSensor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +23,8 @@ public class Browse_Recipes extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
     }
+
+
 }

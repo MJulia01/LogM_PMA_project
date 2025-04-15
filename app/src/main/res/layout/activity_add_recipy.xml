@@ -37,13 +37,14 @@
             android:gravity="center"
             android:text="Add Recipe!"
             android:textColor="#5B221F"
-            android:textSize="35dp"
+            android:textSize="35sp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
+            android:id="@+id/recipeName"
             android:layout_width="match_parent"
             android:layout_height="4dp"
             android:layout_gravity="center"
@@ -57,6 +58,7 @@
             android:padding="10dp" />
 
         <EditText
+            android:id="@+id/recipeIngredients"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
@@ -71,6 +73,7 @@
             android:padding="10dp" />
 
         <EditText
+            android:id="@+id/recipeInstructions"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
