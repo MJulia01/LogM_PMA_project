@@ -1,6 +1,11 @@
 package com.example.myfirstapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Add_Recipy extends AppCompatActivity {
+EditText editTextRecipeName, editTextIngredients, editTextInstructions;
+Button button_Add;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +27,30 @@ public class Add_Recipy extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        editTextRecipeName = findViewById(R.id.recipeName);
+        editTextIngredients = findViewById(R.id.recipeIngredients);
+        editTextInstructions = findViewById(R.id.recipeInstructions);
+        button_Add = findViewById(R.id.button_Add);
+
+        button_Add.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String name = editTextRecipeName.getText().toString();
+                String ingredients = editTextIngredients.getText().toString();
+                String instructions = editTextInstructions.getText().toString();
+
+                Intent intent = new Intent(Add_Recipy.this, Browse_Recipes.class);
+                intent.putExtra("RECIPE_NAME", name);
+                intent.putExtra("INGREDIENTS", ingredients);
+                intent.putExtra("INSTRUCTIONS", instructions);
+                startActivity(intent);
+                Log.d("loggedRecipes",name);
+
+            }
+        });
+
     }
+
+
 }
