@@ -49,7 +49,7 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
     @Override
     public final void onAccuracyChanged (Sensor mShake, int accuracy)
     {
-        Log.d("AccuracyChange", "Daaaamn Daniel!");
+        
     }
 
     @Override
