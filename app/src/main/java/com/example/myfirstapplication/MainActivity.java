@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("BUTTONS", "User tapped the shakeITButton");
-                Intent intent = new Intent(MainActivity.this, Shake_Recipes.class);
+                Intent intent = new Intent(MainActivity.this, Choose_PictureTemplate.class);
                 startActivity(intent);
             }
         });

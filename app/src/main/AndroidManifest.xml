@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyFIRSTApplication"
         tools:targetApi="31">
         <activity
+            android:name=".Choose_PictureTemplate"
+            android:exported="false" />
+        <activity
             android:name=".Shake_Recipes"
             android:exported="false" />
         <activity
