@@ -6,49 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/browseCol_bg"
-    tools:context=".Browse_Recipes">
+    tools:context=".views.Browse_Recipes">
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="411dp"
-        android:layout_height="733dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="-2dp">
-
-        <TextView
-            android:id="@+id/textHeadlineBrowse"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_weight="0.5"
-            android:fontFamily="@font/righteous"
-            android:text="Browse"
-            android:textAlignment="center"
-            android:textColor="#5B221F"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.274" />
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="352dp"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="25dp"
-            android:layout_weight="3"
-            android:background="@drawable/text_box"
-            android:elevation="10dp"
-            android:fontFamily="@font/righteous"
-            android:layout_marginBottom="200dp"
-
-            />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textHeadlineBrowse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_weight="0.1"
+        android:fontFamily="@font/righteous"
+        android:text="Browse"
+        android:textAlignment="center"
+        android:textColor="#5B221F"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.274" />
 
     <Button
         android:id="@+id/button_Back"
@@ -64,7 +41,37 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.033" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="409dp"
+        android:layout_height="580dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:contentDescription="Recipe list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHeadlineBrowse"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_goneMarginTop="20dp" />
 
-
+    <Button
+        android:id="@+id/goToAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:backgroundTint="#FF6123"
+        android:text="Add Recipe"
+        android:contentDescription="add recipes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

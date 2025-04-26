@@ -13,22 +13,22 @@
         android:theme="@style/Theme.MyFIRSTApplication"
         tools:targetApi="31">
         <activity
-            android:name=".SOSTestingStuff"
+            android:name=".testingFeatures.SOSTestingStuff"
             android:exported="false" />
         <activity
-            android:name=".Choose_PictureTemplate"
+            android:name=".testingFeatures.Choose_PictureTemplate"
             android:exported="false" />
         <activity
-            android:name=".Shake_Recipes"
+            android:name=".views.Shake_Recipes"
             android:exported="false" />
         <activity
-            android:name=".Browse_Recipes"
+            android:name=".views.Browse_Recipes"
             android:exported="false" />
         <activity
-            android:name=".Add_Recipy"
+            android:name=".views.Add_Recipy"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

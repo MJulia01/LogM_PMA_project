@@ -1,7 +1,5 @@
-package com.example.myfirstapplication;
+package com.example.myfirstapplication.testingFeatures;
 
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -10,21 +8,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Browse_Recipes extends AppCompatActivity {
-    private SensorManager mSensorManager;
-    private Sensor mSensor;
+import com.example.myfirstapplication.R;
+
+public class SOSTestingStuff extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_browse_recipes);
+        setContentView(R.layout.activity_sostesting_stuff);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
     }
-
-
 }
