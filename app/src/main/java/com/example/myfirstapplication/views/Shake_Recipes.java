@@ -1,4 +1,4 @@
-package com.example.myfirstapplication;
+package com.example.myfirstapplication.views;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -14,7 +14,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.List;
+import com.example.myfirstapplication.R;
+
 public class Shake_Recipes extends AppCompatActivity implements SensorEventListener
 {
 
