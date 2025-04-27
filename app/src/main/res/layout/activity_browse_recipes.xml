@@ -13,7 +13,7 @@
         android:id="@+id/textHeadlineBrowse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="0.1"
         android:fontFamily="@font/righteous"
         android:text="Browse"
@@ -24,55 +24,52 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnBack"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#FF6123"
+        android:elevation="4dp"
         android:text="@string/backButton"
         app:cornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="409dp"
-        android:layout_height="580dp"
+        android:layout_height="620dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:contentDescription="Recipe list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textHeadlineBrowse"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.446"
         app:layout_goneMarginTop="20dp" />
 
     <Button
         android:id="@+id/goToAdd"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#FFC993"
+        android:contentDescription="Add recipes"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:text="Add"
         android:textColor="#5B221F"
-        android:text="Add Recipe"
-        android:contentDescription="add recipes"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
