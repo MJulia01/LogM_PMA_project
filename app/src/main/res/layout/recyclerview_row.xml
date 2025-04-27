@@ -11,6 +11,7 @@
         android:padding="10dp"
         android:orientation="vertical"
         android:background="@drawable/text_box"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -28,14 +29,14 @@
             android:textSize="20sp"
             android:textColor="@color/textColor_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="30dp"/>
         <TextView
             android:id="@+id/recipeStepsText"
             android:text="Step-by-step"
             android:textSize="20sp"
             android:textColor="@color/textColor_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="30dp"/>
 
     </LinearLayout>
 
