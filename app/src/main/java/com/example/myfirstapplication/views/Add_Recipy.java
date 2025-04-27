@@ -27,6 +27,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class Add_Recipy extends AppCompatActivity {
 EditText editTextRecipeName, editTextIngredients, editTextInstructions;
 Button button_Add;
+Button btnBack2;
 
     private ActivityAddRecipyBinding binding;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -83,6 +84,13 @@ Button button_Add;
             @Override
             public void onClick(View view) {
                 updateData();
+            }
+        });
+        btnBack2 = findViewById(R.id.btnBack2);
+        btnBack2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
     }
