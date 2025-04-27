@@ -8,6 +8,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -41,6 +42,7 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
     private List<RecipeModel> recipeList = new ArrayList<>();
     private TextView randomRecipeTextView;
     private Button viewRecipeButton;
+    Button btnBack3;
     private RecipeModel currentDisplayedRecipe;
 
     @Override
@@ -81,6 +83,13 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
                 intent.putExtra("info", "old");
                 intent.putExtra("dataId", currentDisplayedRecipe); // Pass the displayed recipe object
                 startActivity(intent);
+            }
+        });
+        btnBack3 =  findViewById(R.id.btnBack3);
+        btnBack3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
     }
