@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -30,6 +31,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class Browse_Recipes extends AppCompatActivity {
     Button addButton;
+    Button btnBack;
     private ActivityBrowseRecipesBinding binding;
     RecipeAdapter recipeAdapter;
     RecipeDao recipeDao;
@@ -62,7 +64,15 @@ public class Browse_Recipes extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+       btnBack = findViewById(R.id.btnBack);
+       btnBack.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               onBackPressed();
+           }
+       });
     }
+
     private void getData(List<RecipeModel> recipeModels){
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(Browse_Recipes.this));
         recipeAdapter = new RecipeAdapter(recipeModels);
