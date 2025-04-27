@@ -1,12 +1,14 @@
 package com.example.myfirstapplication.views;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -34,12 +36,12 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
 
     private SensorManager mSensorManager;
     Sensor mShake;
-
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
-
     private RecipeDao recipeDao;
     private List<RecipeModel> recipeList = new ArrayList<>();
     private TextView randomRecipeTextView;
+    private Button viewRecipeButton;
+    private RecipeModel currentDisplayedRecipe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -55,6 +57,7 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
         });
 
         randomRecipeTextView = findViewById(R.id.randomRecipeTextView);
+        viewRecipeButton = findViewById(R.id.viewRecipeButton);
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mShake = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -71,6 +74,19 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
         else {
             Log.d("SensroAcc", "Damn nooooooooo Daniel");
         }
+        viewRecipeButton.setOnClickListener(v -> {
+            if (!recipeList.isEmpty()) {
+                // Get the random recipe
+                int randomIndex = new Random().nextInt(recipeList.size());
+                RecipeModel randomRecipe = recipeList.get(randomIndex);
+
+                // Send the random recipe to Add_Recipy activity
+                Intent intent = new Intent(Shake_Recipes.this, Add_Recipy.class);
+                intent.putExtra("info", "old");
+                intent.putExtra("dataId", randomRecipe); // Pass the random recipe object
+                startActivity(intent);
+            }
+        });
     }
 
     private void fetchRecipes() {
@@ -99,7 +115,7 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
         float y = event.values[1];
         float z = event.values[2];
         float acceleration = (float) Math.sqrt(x * x + y * y + z * z);
-        if (acceleration > 20)
+        if (acceleration > 15)
         {
             if (!recipeList.isEmpty()) {
                 int randomIndex = new Random().nextInt(recipeList.size());

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/browseCol_bg"
+    android:background="@drawable/gradient_browse"
     tools:context=".views.Browse_Recipes">
 
 
@@ -64,7 +64,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:gravity="center"
-        android:backgroundTint="#FF6123"
+        android:backgroundTint="#FFC993"
+        android:textColor="#5B221F"
         android:text="Add Recipe"
         android:contentDescription="add recipes"
         app:layout_constraintBottom_toBottomOf="parent"

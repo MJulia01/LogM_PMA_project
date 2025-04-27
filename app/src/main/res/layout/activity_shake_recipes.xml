@@ -5,25 +5,45 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.Shake_Recipes">
+    tools:context=".views.Shake_Recipes"
+    android:background="@drawable/shake_it_gradient">
 
     <TextView
         android:id="@+id/randomRecipeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="332dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="333dp"
+        android:fontFamily="@font/righteous"
+        android:textColor="#ffff"
+        android:padding="20dp"
         android:text="Shake to get a random recipe!"
         android:textSize="20sp"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:padding="20dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/viewRecipeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginBottom="246dp"
+        android:backgroundTint="#FFC993"
+        android:fontFamily="@font/righteous"
+        android:textColor="#5B221F"
+        android:text="View Recipe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomRecipeTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

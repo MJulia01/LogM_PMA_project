@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="666dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,27 +59,6 @@
             android:hint="Recipe name"
             android:padding="10dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="25dp"
-                android:background="@drawable/text_box" />
-
-            <Button
-                android:id="@+id/add_picture"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="25dp"
-                android:backgroundTint="#FF6123"
-                android:text="Add picture"
-                app:cornerRadius="12dp" />
-
-        </LinearLayout>
 
 
         <EditText
@@ -116,7 +95,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="63dp"
         android:layout_marginTop="3dp"
         android:orientation="horizontal"
@@ -131,6 +110,8 @@
             android:layout_gravity="start"
             android:backgroundTint="#FF6123"
             android:text="Delete"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="10dp"
             app:cornerRadius="12dp" />
 
         <Button
@@ -140,6 +121,7 @@
             android:layout_gravity="center_horizontal"
             android:backgroundTint="#FF6123"
             android:text="Update"
+            android:layout_marginHorizontal="10dp"
             app:cornerRadius="12dp" />
 
         <Button
@@ -149,6 +131,7 @@
             android:layout_gravity="end"
             android:backgroundTint="#FF6123"
             android:text="Save"
+            android:layout_marginHorizontal="10dp"
             app:cornerRadius="12dp" />
 
     </LinearLayout>
