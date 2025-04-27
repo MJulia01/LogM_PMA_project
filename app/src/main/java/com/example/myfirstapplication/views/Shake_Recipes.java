@@ -75,15 +75,11 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
             Log.d("SensroAcc", "Damn nooooooooo Daniel");
         }
         viewRecipeButton.setOnClickListener(v -> {
-            if (!recipeList.isEmpty()) {
-                // Get the random recipe
-                int randomIndex = new Random().nextInt(recipeList.size());
-                RecipeModel randomRecipe = recipeList.get(randomIndex);
-
-                // Send the random recipe to Add_Recipy activity
+            if (currentDisplayedRecipe != null) {
+                // Send the currently displayed recipe to Add_Recipy activity
                 Intent intent = new Intent(Shake_Recipes.this, Add_Recipy.class);
                 intent.putExtra("info", "old");
-                intent.putExtra("dataId", randomRecipe); // Pass the random recipe object
+                intent.putExtra("dataId", currentDisplayedRecipe); // Pass the displayed recipe object
                 startActivity(intent);
             }
         });
@@ -121,6 +117,8 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
                 int randomIndex = new Random().nextInt(recipeList.size());
                 RecipeModel randomRecipe = recipeList.get(randomIndex);
                 randomRecipeTextView.setText(randomRecipe.recipeName); // Display the random recipe name
+
+                currentDisplayedRecipe = randomRecipe;
             } else {
                 Log.d("Shaken", "No recipes available.");
             }
