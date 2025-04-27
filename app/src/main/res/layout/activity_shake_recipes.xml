@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".views.Shake_Recipes">
 
+    <TextView
+        android:id="@+id/randomRecipeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shake to get a random recipe!"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:padding="20dp" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"

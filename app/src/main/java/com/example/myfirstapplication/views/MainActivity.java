@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("BUTTONS", "User tapped the addRecipyButton");
                 Intent intent = new Intent(MainActivity.this, Add_Recipy.class);
+                intent.putExtra("info","new");
                 startActivity(intent);
             }
         });
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("BUTTONS", "User tapped the shakeITButton");
-                Intent intent = new Intent(MainActivity.this, SOSTestingStuff.class);
+                Intent intent = new Intent(MainActivity.this, Shake_Recipes.class);
                 startActivity(intent);
             }
         });

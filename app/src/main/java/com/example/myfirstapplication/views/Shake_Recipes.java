@@ -7,20 +7,39 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.room.Room;
 
 import com.example.myfirstapplication.R;
+import com.example.myfirstapplication.database.RecipeDao;
+import com.example.myfirstapplication.database.RecipeDatabase;
+import com.example.myfirstapplication.model.RecipeModel;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class Shake_Recipes extends AppCompatActivity implements SensorEventListener
 {
 
     private SensorManager mSensorManager;
     Sensor mShake;
+
+    private CompositeDisposable compositeDisposable = new CompositeDisposable();
+
+    private RecipeDao recipeDao;
+    private List<RecipeModel> recipeList = new ArrayList<>();
+    private TextView randomRecipeTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,8 +54,15 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
             return insets;
         });
 
+        randomRecipeTextView = findViewById(R.id.randomRecipeTextView);
+
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mShake = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+        RecipeDatabase recipeDatabase = Room.databaseBuilder(getApplicationContext(), RecipeDatabase.class, "Recipes").allowMainThreadQueries().build();
+        recipeDao = recipeDatabase.recipeDao();
+
+        fetchRecipes();
 
         if (mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null)
         {
@@ -45,6 +71,19 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
         else {
             Log.d("SensroAcc", "Damn nooooooooo Daniel");
         }
+    }
+
+    private void fetchRecipes() {
+        // Fetch the list of recipes from the database
+        compositeDisposable.add(recipeDao.getAll()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(this::updateRecipeList));
+    }
+
+    private void updateRecipeList(List<RecipeModel> recipes) {
+        // Update the local recipe list
+        recipeList = recipes;
     }
 
     @Override
@@ -62,7 +101,13 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
         float acceleration = (float) Math.sqrt(x * x + y * y + z * z);
         if (acceleration > 20)
         {
-            Log.d("Shaken", "You shook it!");
+            if (!recipeList.isEmpty()) {
+                int randomIndex = new Random().nextInt(recipeList.size());
+                RecipeModel randomRecipe = recipeList.get(randomIndex);
+                randomRecipeTextView.setText(randomRecipe.recipeName); // Display the random recipe name
+            } else {
+                Log.d("Shaken", "No recipes available.");
+            }
         }
     }
 
