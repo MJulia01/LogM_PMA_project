@@ -9,67 +9,67 @@
     tools:context=".views.Browse_Recipes">
 
 
-    <TextView
-        android:id="@+id/textHeadlineBrowse"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_weight="0.1"
-        android:fontFamily="@font/righteous"
-        android:text="Browse"
-        android:textAlignment="center"
-        android:textColor="#5B221F"
-        android:textSize="35sp"
-        android:textStyle="bold"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#FF6123"
-        android:elevation="4dp"
-        android:text="@string/backButton"
-        app:cornerRadius="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/goToAdd"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="#FFC993"
+            android:contentDescription="Add recipes"
+            android:elevation="4dp"
+            android:text="Add"
+            android:textColor="#5B221F"
+            app:cornerRadius="12dp" />
+
+        <TextView
+            android:id="@+id/textHeadlineBrowse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:fontFamily="@font/righteous"
+            android:text="Browse"
+            android:textAlignment="center"
+            android:textColor="#5B221F"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBack2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#FF6123"
+            android:elevation="4dp"
+            android:text="@string/backButton"
+            app:cornerRadius="12dp" />
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="409dp"
-        android:layout_height="620dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:contentDescription="Recipe list"
+        android:layout_width="match_parent"
+        android:layout_height="680dp"
+        android:contentDescription="recycler view"
+        android:foregroundGravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textHeadlineBrowse"
-        app:layout_constraintVertical_bias="0.446"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.448"
         app:layout_goneMarginTop="20dp" />
 
-    <Button
-        android:id="@+id/goToAdd"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#FFC993"
-        android:contentDescription="Add recipes"
-        android:elevation="4dp"
-        android:gravity="center"
-        android:text="Add"
-        android:textColor="#5B221F"
-        app:cornerRadius="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

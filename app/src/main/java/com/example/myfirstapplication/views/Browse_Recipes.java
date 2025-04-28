@@ -64,7 +64,7 @@ public class Browse_Recipes extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-       btnBack = findViewById(R.id.btnBack);
+       btnBack = findViewById(R.id.btnBack2);
        btnBack.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
