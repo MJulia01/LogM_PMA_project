@@ -2,7 +2,6 @@ package com.example.myfirstapplication.views;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,9 +23,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class Add_Recipy extends AppCompatActivity {
-EditText editTextRecipeName, editTextIngredients, editTextInstructions;
-Button button_Add;
+public class Add_Recipe extends AppCompatActivity {
 Button btnBack2;
 
     private ActivityAddRecipyBinding binding;
@@ -101,18 +98,18 @@ Button btnBack2;
         steps = binding.stepsText.getText().toString();
         recipeModel = new RecipeModel(recipeName,ingredients,steps);
 
-        compositeDisposable.add(recipeDao.insert(recipeModel).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(Add_Recipy.this::handleResponse));
+        compositeDisposable.add(recipeDao.insert(recipeModel).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(Add_Recipe.this::handleResponse));
     }
     private void deleteData(){
-        compositeDisposable.add(recipeDao.delete(recipeModel).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(Add_Recipy.this::handleResponse));
+        compositeDisposable.add(recipeDao.delete(recipeModel).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(Add_Recipe.this::handleResponse));
     }
     private void updateData(){
         recipeModel.recipeName = binding.recipetitleText.getText().toString();
         recipeModel.ingredients = binding.ingredientsText.getText().toString();
-        compositeDisposable.add(recipeDao.update(recipeModel).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(Add_Recipy.this::handleResponse));
+        compositeDisposable.add(recipeDao.update(recipeModel).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(Add_Recipe.this::handleResponse));
     }
     private void handleResponse(){
-        Intent intent = new Intent(Add_Recipy.this, Browse_Recipes.class);
+        Intent intent = new Intent(Add_Recipe.this, Browse_Recipes.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

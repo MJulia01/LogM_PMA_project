@@ -79,7 +79,7 @@ public class Shake_Recipes extends AppCompatActivity implements SensorEventListe
         viewRecipeButton.setOnClickListener(v -> {
             if (currentDisplayedRecipe != null) {
                 // Send the currently displayed recipe to Add_Recipy activity
-                Intent intent = new Intent(Shake_Recipes.this, Add_Recipy.class);
+                Intent intent = new Intent(Shake_Recipes.this, Add_Recipe.class);
                 intent.putExtra("info", "old");
                 intent.putExtra("dataId", currentDisplayedRecipe); // Pass the displayed recipe object
                 startActivity(intent);

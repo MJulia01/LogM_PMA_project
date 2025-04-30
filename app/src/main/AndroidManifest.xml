@@ -25,7 +25,7 @@
             android:name=".views.Browse_Recipes"
             android:exported="false" />
         <activity
-            android:name=".views.Add_Recipy"
+            android:name=".views.Add_Recipe"
             android:exported="false" />
         <activity
             android:name=".views.MainActivity"

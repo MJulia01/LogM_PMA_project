@@ -13,7 +13,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.myfirstapplication.R;
-import com.example.myfirstapplication.testingFeatures.SOSTestingStuff;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d("BUTTONS", "User tapped the addRecipyButton");
-                Intent intent = new Intent(MainActivity.this, Add_Recipy.class);
+                Intent intent = new Intent(MainActivity.this, Add_Recipe.class);
                 intent.putExtra("info","new");
                 startActivity(intent);
             }

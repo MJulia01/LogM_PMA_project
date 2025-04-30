@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -30,15 +29,14 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class Browse_Recipes extends AppCompatActivity {
-    Button addButton;
+
     Button btnBack;
     private ActivityBrowseRecipesBinding binding;
     RecipeAdapter recipeAdapter;
     RecipeDao recipeDao;
     RecipeDatabase recipeDatabase;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
-    private SensorManager mSensorManager;
-    private Sensor mSensor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +57,7 @@ public class Browse_Recipes extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.goToAdd);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(Browse_Recipes.this, Add_Recipy.class);
+                Intent intent = new Intent(Browse_Recipes.this, Add_Recipe.class);
                 intent.putExtra("info", "new");
                 startActivity(intent);
             }

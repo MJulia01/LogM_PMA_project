@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfirstapplication.databinding.RecyclerviewRowBinding;
 import com.example.myfirstapplication.model.RecipeModel;
-import com.example.myfirstapplication.views.Add_Recipy;
+import com.example.myfirstapplication.views.Add_Recipe;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(holder.itemView.getContext(), Add_Recipy.class);
+                Intent intent = new Intent(holder.itemView.getContext(), Add_Recipe.class);
                 intent.putExtra("dataId",recipeModels.get(holder.getAdapterPosition()));
                 intent.putExtra("info","old");
                 holder.itemView.getContext().startActivity(intent);
